@@ -11,13 +11,15 @@ export class LoginService {
 	token: string;
 	constructor(http: Http) {}
 
-	login(username: string, password:string): Observable<boolean> {
+	login(username: string, password:string): Observable<string> {
 		if (username === 'test' && password === 'test') {
 			this.token = 'test';
 			localStorage.setItem('CurrentUser', this.token);
-			return Observable.create(true);
 		}
-		else
-			return Observable.create(false);		
+		return Observable.create("success");
+	}	
+
+	logout() {
+		localStorage.removeItem('CurrentUser');
 	}
 }

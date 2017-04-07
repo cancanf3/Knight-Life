@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { LoginService } from './login-page-service';
-
+import { Component }                   from '@angular/core';
+import { NavController, NavParams }    from 'ionic-angular';
+import { LoginService }                from './login-page-service';
+import { TabsPage }                    from '../tabs/tabs';
 /*
   Generated class for the LoginPage page.
 
@@ -12,13 +12,14 @@ import { LoginService } from './login-page-service';
   selector: 'page-login-page',
   templateUrl: 'login-page.html'
 })
-export class LoginPagePage {
+export class LoginPage {
 
-	username: string;
-	password: string;
-	result: boolean;
+	username = '';
+	password = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private loginservice: LoginService) {}
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams, 
+              private loginservice: LoginService) {}
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPagePage');
@@ -26,7 +27,9 @@ export class LoginPagePage {
 
 
   onSubmit() {
-  	this.loginservice.login(this.username, this.password).subscribe(bool => this.result = bool);
+  	this.loginservice.login(this.username, this.password);
+    this.navCtrl.push(TabsPage);
+
   }
 
 }
