@@ -16,6 +16,7 @@ export class LoginPage {
 
 	username = '';
 	password = '';
+  check: boolean;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams, 
@@ -27,9 +28,18 @@ export class LoginPage {
 
 
   onSubmit() {
-  	this.loginservice.login(this.username, this.password);
-    this.navCtrl.push(TabsPage);
+    this.check = false;
+  	this.loginservice.login(this.username, this.password).subscribe( msg => {
+      if (msg == 'false')
+        this.check = true;
+      else
+        this.navCtrl.push(TabsPage);  
+       
+    });
+  }
 
+  reset() {
+    this.check = false;
   }
 
 }
