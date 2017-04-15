@@ -6,10 +6,12 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { LoginPage } from '../pages/login-page/login-page';
-
+import { EventService } from './services/event.service';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [EventService]
+
 })
 export class MyApp {
   @ViewChild('myNav') nav: NavController

@@ -7,13 +7,19 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{item.text}}</ion-title>
+    <ion-title>{{item.title}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <h2>Welcome #{{item.id}}</h2>
-    <p>Great job!</p>
+    <h1>{{item.title}}</h1>
+    <p>{{item.description}}</p>
+    <ion-icon name="person">  {{ item.owner }}</ion-icon>
+    <br>
+    <ion-icon name="clock">  {{ item.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
+    <br>
+    <ion-icon name="navigate">  {{ item.location }}</ion-icon>
+
 </ion-content>

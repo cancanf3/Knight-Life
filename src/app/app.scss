@@ -14,3 +14,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+h2.titles {
+    color: rgb(43, 43, 43);
+    font-weight: bold;
+    text-align: left;
+}
+
+p {
+    font-weight: lighter;
+}
+
+ion-icon.icon.icon-md.ion-md-clock.item-icon {
+    color: rgb(43, 43, 43);
+    font-weight: lighter;
+    float: left;
+}
