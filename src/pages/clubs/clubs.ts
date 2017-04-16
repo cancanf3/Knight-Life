@@ -44,6 +44,7 @@ export class ClubsPage {
             club.description = i.description;
             club.owner = i.owner;
             club.image = i.image;
+            this.clubs.push(club);
         }
         //console.log(this.clubs[0]);
     }
