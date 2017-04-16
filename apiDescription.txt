@@ -1,0 +1,34 @@
+API: 
+
+HTTP type:
+URI:
+Description:
+
+
+GET
+/knightlife/rest/organizations
+Returns all the RSO in the DB
+
+GET
+/knightlife/rest/organizations/{token}
+Returns all the RSO from that user
+
+POST
+/knightlife/rest/organizations/favorite/{token}
+Set a RSO as favorite for an user
+
+POST
+/knightlife/rest/organizations/defavorite/{token}
+Unset a RSO as favorite for an user
+
+GET
+/knightlife/rest/events
+Returns all the events in the DB
+
+POST
+/knightlife/rest/auth/login
+Return the token from that user
+
+POST
+/knightlife/rest/auth/create
+Create a new user

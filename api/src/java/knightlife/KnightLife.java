@@ -23,6 +23,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -71,7 +72,145 @@ public class KnightLife {
             .entity(a.toString())
             .build();
     }
+    
+    @GET
+    @Path("organizations/{token}")
+    public Response getUserRSO(@PathParam("token") String token) throws IOException, ParseException {
+        
+        JSONParser parser = new JSONParser();
+        JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("users.json")));
+        String respond;
+        for (Object o : a) {
+            JSONObject ev = (JSONObject) o;
+            if (token.compareTo((String) ev.get("token")) == 0 ) {
+                JSONArray rsosUser = (JSONArray) ev.get("organizations");
+                respond = getRso(rsosUser);
+                
+                return Response
+                    .status(200)
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+                    .header("Access-Control-Allow-Credentials", "true")
+                    .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+                    .header("Access-Control-Max-Age", "1209600")
+                    .entity(respond)
+                    .build();            
+            }
+            
+        }
+        
+        return Response
+            .status(500)
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+            .header("Access-Control-Allow-Credentials", "true")
+            .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+            .header("Access-Control-Max-Age", "1209600")
+            .entity("User does not exist")
+            .build(); 
+    }
+    
+    private String getRso( JSONArray names ) throws IOException, ParseException { 
+        JSONParser parser = new JSONParser();
+        JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("RSO.json")));
+        JSONArray result = new JSONArray();
+        
+        
+        for ( Object rso : names) {    
+            for (Object u: a) {
+                    JSONObject ev = (JSONObject) u;
+                    if ( ((String)ev.get("name")).compareTo(rso.toString()) == 0) {
+                        result.add(ev);
+                    }
+                }
+        }
+        
+        return result.toString();
+    }
 
+    @POST
+    @Path("organizations/favorite/{token}")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public Response postUserRSO(@PathParam("token") String token,
+                                @FormParam("organization") String organization) throws FileNotFoundException, URISyntaxException, IOException, ParseException {
+        
+        int status = 500;
+        String respond = "User does not exist";
+        JSONParser parser = new JSONParser();
+        JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("users.json")));
+        for (Object o : a) {
+            JSONObject ev = (JSONObject) o;
+            if (token.compareTo((String) ev.get("token")) == 0 ) {
+                JSONArray rsosUser = (JSONArray) ev.get("organizations");
+                rsosUser.add(organization);
+                ev.put("organizations", rsosUser);
+                status = 200;
+                respond = "RSO added";
+                break;
+            }
+            
+        }
+        if (status == 200) {
+            URL resourceUrl = getClass().getResource("users.json");
+            File file = new File(resourceUrl.toURI());
+            OutputStream output = new FileOutputStream(file);
+            PrintStream printStream = new PrintStream(output);
+            printStream.print(a.toString());
+            printStream.close();
+        }
+        return Response
+            .status(status)
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+            .header("Access-Control-Allow-Credentials", "true")
+            .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+            .header("Access-Control-Max-Age", "1209600")
+            .entity(respond)
+            .build();  
+    }
+    
+    
+    @POST
+    @Path("organizations/defavorite/{token}")
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public Response removeUserRSO(@PathParam("token") String token,
+                                  @FormParam("organization") String organization) throws FileNotFoundException, URISyntaxException, IOException, ParseException {
+        
+        int status = 500;
+        String respond = "User does not exist";
+        JSONParser parser = new JSONParser();
+        JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("users.json")));
+        for (Object o : a) {
+            JSONObject ev = (JSONObject) o;
+            if (token.compareTo((String) ev.get("token")) == 0 ) {
+                JSONArray rsosUser = (JSONArray) ev.get("organizations");
+                rsosUser.remove(organization);
+                ev.put("organizations", rsosUser);
+                status = 200;
+                respond = "RSO added";
+                break;
+            }
+            
+        }
+        if (status == 200) {
+            URL resourceUrl = getClass().getResource("users.json");
+            File file = new File(resourceUrl.toURI());
+            OutputStream output = new FileOutputStream(file);
+            PrintStream printStream = new PrintStream(output);
+            printStream.print(a.toString());
+            printStream.close();
+        }
+        return Response
+            .status(status)
+            .header("Access-Control-Allow-Origin", "*")
+            .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
+            .header("Access-Control-Allow-Credentials", "true")
+            .header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+            .header("Access-Control-Max-Age", "1209600")
+            .entity(respond)
+            .build();  
+    }
+    
     @GET
     @Path("events")
     @Produces(MediaType.APPLICATION_JSON)
@@ -162,7 +301,6 @@ public class KnightLife {
         PrintStream printStream = new PrintStream(output);
         printStream.print(a.toString());
         printStream.close();
-        System.out.println(a.toString());
          
      
         return Response
