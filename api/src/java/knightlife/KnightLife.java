@@ -100,7 +100,7 @@ public class KnightLife {
         }
         
         return Response
-            .status(500)
+            .status(200)
             .header("Access-Control-Allow-Origin", "*")
             .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
             .header("Access-Control-Allow-Credentials", "true")
@@ -134,7 +134,7 @@ public class KnightLife {
     public Response postUserRSO(@PathParam("token") String token,
                                 @FormParam("organization") String organization) throws FileNotFoundException, URISyntaxException, IOException, ParseException {
         
-        int status = 500;
+        int status = 200;
         String respond = "User does not exist";
         JSONParser parser = new JSONParser();
         JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("users.json")));
@@ -176,7 +176,7 @@ public class KnightLife {
     public Response removeUserRSO(@PathParam("token") String token,
                                   @FormParam("organization") String organization) throws FileNotFoundException, URISyntaxException, IOException, ParseException {
         
-        int status = 500;
+        int status = 200;
         String respond = "User does not exist";
         JSONParser parser = new JSONParser();
         JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("users.json")));
@@ -187,7 +187,7 @@ public class KnightLife {
                 rsosUser.remove(organization);
                 ev.put("organizations", rsosUser);
                 status = 200;
-                respond = "RSO added";
+                respond = "RSO Deleted";
                 break;
             }
             
@@ -240,7 +240,7 @@ public class KnightLife {
   
         
         String respond = "Username or Password Incorrect";
-        int status = 500;
+        int status = 200;
         JSONParser parser = new JSONParser();
         JSONArray a = (JSONArray) parser.parse(new InputStreamReader(getClass().getResourceAsStream("users.json")));
         for (Object o : a) {
@@ -277,7 +277,7 @@ public class KnightLife {
             JSONObject ev = (JSONObject) o;
             if (username.compareTo((String) ev.get("username")) == 0 )
                 return Response
-                    .status(500)
+                    .status(200)
                     .header("Access-Control-Allow-Origin", "*")
                     .header("Access-Control-Allow-Headers", "origin, content-type, accept, authorization")
                     .header("Access-Control-Allow-Credentials", "true")

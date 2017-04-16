@@ -30,7 +30,8 @@ export class LoginPage {
   onSubmit() {
     this.check = false;
   	this.loginservice.login(this.username, this.password).subscribe( msg => {
-      if (msg == 'false')
+      console.log(msg);
+      if ("false" == localStorage.getItem("CurrentUser"))
         this.check = true;
       else
         this.navCtrl.push(TabsPage);  
