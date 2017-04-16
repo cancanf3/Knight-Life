@@ -5,6 +5,7 @@ import { AboutPage } 	from '../about/about';
 import { ContactPage } 	from '../contact/contact';
 import { LoginPage } 	from '../login-page/login-page';
 import { SettingPage }  from '../setting/setting';
+import { ClubsPage }    from '../clubs/clubs';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -16,6 +17,7 @@ export class TabsPage {
   tab2Root: any = AboutPage;
   tab3Root: any = ContactPage;
   tab4Root: any = SettingPage;
+  tab5Root: any = ClubsPage;
 
   constructor() {
 

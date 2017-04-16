@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Organizations</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let org of orgs" (click)="itemSelected(org)">
+            <h2 class="titles">{{ org.title }}</h2>
+            <p>{{ org.description }}</p>
+            <ion-icon name="clock">  {{ org.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>
