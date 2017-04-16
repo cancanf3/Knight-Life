@@ -1,0 +1,56 @@
+[
+    {
+        "username": "josepena",
+        "password": "test",
+        "token": "0",
+        "organizations": [
+            "Venezuelan Student Association (VENSA)",
+            "Theta Tau Professional Engineering Fraternity"       
+        ]
+    },
+    {
+        "username": "davidisrawi",
+        "password": "test",
+        "token": "1",
+        "organizations": [
+            "Venezuelan Student Association (VENSA)",
+            "Theta Tau Professional Engineering Fraternity"       
+        ]
+    },
+    {
+        "username": "brigitmurtaugh",
+        "password": "test",
+        "token": "2",
+        "organizations": [
+            "Society of Women Engineers (SWE)",
+            "Theta Tau Professional Engineering Fraternity"       
+        ]
+    },
+    {
+        "username": "graceyoo",
+        "password": "test",
+        "token": "3",
+        "organizations": [
+            "Society of Women Engineers (SWE)",
+            "Theta Tau Professional Engineering Fraternity"       
+        ]
+    },
+    {
+        "username": "joanhenriquez",
+        "password": "test",
+        "token": "4",
+        "organizations": [
+            "Association for Computing Machinery (ACM)"       
+        ]
+    },
+    {
+        "username": "chrishavekost",
+        "password": "test",
+        "token": "5",
+        "organizations": [
+            "Association for Computing Machinery (ACM)"       
+        ]
+    }
+    
+    
+]
