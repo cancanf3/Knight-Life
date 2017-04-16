@@ -22,6 +22,8 @@ export class ClubsPage {
         this.navCtrl.push(ClubPage, {
             item: item,
         });
+        console.log('pushed item:');
+        console.log(item);
     }
 
     ngOnInit() {
@@ -44,6 +46,7 @@ export class ClubsPage {
             club.description = i.description;
             club.owner = i.owner;
             club.image = i.image;
+            this.clubs.push(club);
         }
         //console.log(this.clubs[0]);
     }

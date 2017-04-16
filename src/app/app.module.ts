@@ -6,6 +6,7 @@ import { ContactPage }     from '../pages/contact/contact';
 import { HomePage }        from '../pages/home/home';
 import { TabsPage }        from '../pages/tabs/tabs';
 import { ClubsPage }       from '../pages/clubs/clubs';
+import { ClubPage }       from '../pages/club/club';
 import { LoginPage }       from '../pages/login-page/login-page';
 import { LoginService }    from '../pages/login-page/login-page-service';
 import { EventPage }       from '../pages/event/event';
@@ -26,6 +27,7 @@ import { OrgService } from '../app/services/org.service';
     EventPage,
     SettingPage,
     ClubsPage,
+    ClubPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +42,8 @@ import { OrgService } from '../app/services/org.service';
     LoginPage,
     EventPage,
     SettingPage,
-    ClubsPage
+    ClubsPage,
+    ClubPage
   ],
   providers: [
     StatusBar,

@@ -6,10 +6,14 @@
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let org of orgs" (click)="itemSelected(org)">
-            <h2 class="titles">{{ org.title }}</h2>
-            <p>{{ org.description }}</p>
-            <ion-icon name="clock">  {{ org.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
+        <ion-item *ngFor="let club of clubs" (click)="itemSelected(club)">
+            <ion-thumbnail *ngIf="club.image" item-left>
+                <img class="logo" src="{{ club.image }}">
+            </ion-thumbnail>
+            <ion-thumbnail *ngIf="!club.image" item-left>
+                <img class="logo" src="../../assets/img/pegasus.jpg">
+            </ion-thumbnail>
+            <h2 class="names">{{ club.name }}</h2>
         </ion-item>
     </ion-list>
 </ion-content>

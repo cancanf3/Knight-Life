@@ -7,19 +7,24 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{item.title}}</ion-title>
+    <ion-title>{{item.name}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-    <h1>{{item.title}}</h1>
+    <ion-thumbnail *ngIf="item.image">
+        <img class="logo" src="{{ item.image }}">
+    </ion-thumbnail>
+    <ion-thumbnail *ngIf="!item.image">
+        <img class="logo" src="../../assets/img/pegasus.jpg">
+    </ion-thumbnail>
+    <h1>{{item.name}}</h1>
     <p>{{item.description}}</p>
+    <br>
     <ion-icon name="person">  {{ item.owner }}</ion-icon>
     <br>
-    <ion-icon name="clock">  {{ item.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
-    <br>
-    <ion-icon name="navigate">  {{ item.location }}</ion-icon>
+
 
 </ion-content>
