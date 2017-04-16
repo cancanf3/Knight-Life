@@ -22,6 +22,8 @@ export class ClubsPage {
         this.navCtrl.push(ClubPage, {
             item: item,
         });
+        console.log('pushed item:');
+        console.log(item);
     }
 
     ngOnInit() {

@@ -6,7 +6,7 @@
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let club of clubs" (click)="itemSelected(org)">
+        <ion-item *ngFor="let club of clubs" (click)="itemSelected(club)">
             <ion-thumbnail *ngIf="club.image" item-left>
                 <img class="logo" src="{{ club.image }}">
             </ion-thumbnail>
