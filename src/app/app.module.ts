@@ -16,6 +16,7 @@ import { SplashScreen }    from '@ionic-native/splash-screen';
 import { EventService }    from '../app/services/event.service';
 import { OrgService }      from '../app/services/org.service';
 import { DashboardPage }   from '../pages/dashboard/dashboard';
+import { CalendarPage }    from '../pages/calendar/calendar';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { DashboardPage }   from '../pages/dashboard/dashboard';
     ClubPage,
     RegisterPage,
     FaqPage,
-    DashboardPage
+    DashboardPage,
+    CalendarPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -46,7 +48,8 @@ import { DashboardPage }   from '../pages/dashboard/dashboard';
     ClubPage,
     RegisterPage,
     FaqPage,
-    DashboardPage
+    DashboardPage,
+    CalendarPage
   ],
   providers: [
     StatusBar,

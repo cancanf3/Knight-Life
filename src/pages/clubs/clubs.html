@@ -2,6 +2,8 @@
     <ion-navbar>
         <ion-title>Organizations</ion-title>
     </ion-navbar>
+    <ion-searchbar [(ngModel)]="searching" (ionInput)="search($club)" placeholder="Search organization...">
+    </ion-searchbar>
 </ion-header>
 
 <ion-content>
@@ -11,7 +13,7 @@
                 <img class="logo" src="{{ club.image }}">
             </ion-thumbnail>
             <ion-thumbnail *ngIf="!club.image" item-left>
-                <img class="logo" src="../../assets/img/pegasus.jpg">
+                <img class="logo" src="https://static.yocket.in/images/universities/logos/ucf_logo.jpg">
             </ion-thumbnail>
             <h2 class="names">{{ club.name }}</h2>
         </ion-item>
