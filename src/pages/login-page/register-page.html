@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header *ngIf='!registering'>
 
   <ion-navbar>
     <ion-title>RegisterPage</ion-title>
@@ -31,12 +31,12 @@
       Username already exists
     </div>
 
-    <button ion-button round (click)="onRegister()" outline color="primary" type="submit">
+    <button ion-button round (click)="onRegister()" outline color="primary" type="submit" [disabled]="!loginForm.form.valid">
       <span> Register </span>
     </button>
 	</form>
 
-  <img style="margin: auto" *ngIf='registering' src='../../assets/Gif/ring.svg'>
+  <img style="margin-left: auto; margin-right: auto; display: block; margin-top: 150px" *ngIf='registering' src='../../assets/Gif/ring.svg'>
 
 
   </ion-content>

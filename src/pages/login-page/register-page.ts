@@ -33,8 +33,10 @@ export class RegisterPage {
 		this.registering = true;
 		this.loginservice.register(this.username, this.password).subscribe(msg => {
 
-	      if (msg == "Username already exist")
-	        this.check = true;
+	      if (msg == "Username already exist") {
+	      	this.check = true;
+	      	this.registering = false;
+	      }
 	      else {
 	        this.navCtrl.pop();
 	        this.check = false;
