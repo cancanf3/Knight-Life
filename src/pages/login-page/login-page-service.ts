@@ -29,15 +29,6 @@ export class LoginService {
       		})
     	});
 
-		// if (username === 'test' && password === 'test') {
-		// 	this.token = 'test';
-		// 	localStorage.setItem('CurrentUser', this.token);
-		// 	return Observable.create( observer => {
-		// 		observer.next(this.token);
-		// 		observer.complete();
-		// 	});
-		// }
-
 		return this.http.post(
 		  this.url+"login",this.payload,
           options).map(res => {
@@ -49,6 +40,24 @@ export class LoginService {
           	else
           		localStorage.setItem('CurrentUser', body); 
           	return body;
+          });
+			
+	}
+
+
+	register(username: string, password:string): Observable<string> {
+		this.payload = "username="+username+"&"+"password="+password;
+
+		var options = new RequestOptions({
+      		headers: new Headers({
+        	'Content-Type': 'application/x-www-form-urlencoded'
+      		})
+    	});
+
+		return this.http.post(
+		  this.url+"create",this.payload,
+          options).map(res => {
+          	return res.text();
           });
 			
 	}

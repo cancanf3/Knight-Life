@@ -5,15 +5,16 @@ import { AboutPage }       from '../pages/about/about';
 import { HomePage }        from '../pages/home/home';
 import { TabsPage }        from '../pages/tabs/tabs';
 import { ClubsPage }       from '../pages/clubs/clubs';
-import { ClubPage }       from '../pages/club/club';
+import { ClubPage }        from '../pages/club/club';
 import { LoginPage }       from '../pages/login-page/login-page';
+import { RegisterPage }    from '../pages/login-page/register-page';
 import { LoginService }    from '../pages/login-page/login-page-service';
 import { EventPage }       from '../pages/event/event';
 import { SettingPage }     from '../pages/setting/setting';
 import { StatusBar }       from '@ionic-native/status-bar';
 import { SplashScreen }    from '@ionic-native/splash-screen';
-import { EventService } from '../app/services/event.service';
-import { OrgService } from '../app/services/org.service';
+import { EventService }    from '../app/services/event.service';
+import { OrgService }      from '../app/services/org.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { OrgService } from '../app/services/org.service';
     EventPage,
     SettingPage,
     ClubsPage,
-    ClubPage
+    ClubPage,
+    RegisterPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +42,8 @@ import { OrgService } from '../app/services/org.service';
     EventPage,
     SettingPage,
     ClubsPage,
-    ClubPage
+    ClubPage,
+    RegisterPage
   ],
   providers: [
     StatusBar,
