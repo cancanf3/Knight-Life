@@ -50,4 +50,5 @@ export class ClubsPage {
         }
         //console.log(this.clubs[0]);
     }
+
 }
