@@ -2,7 +2,7 @@
     <ion-navbar>
         <ion-title>Organizations</ion-title>
     </ion-navbar>
-    <ion-searchbar>
+    <ion-searchbar [(ngModel)]="searching" (ionInput)="search($club)" placeholder="Search organization...">
     </ion-searchbar>
 </ion-header>
 

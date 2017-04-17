@@ -29,10 +29,19 @@ h2.names {
 
 img.logo {
     border-radius: 50%;
+    margin: auto;
 }
 
-p {
-    font-weight: lighter;
+.description {
+    color: rgb(91, 93, 96);
+    font-size: 1.7rem;
+    font-family: "Helvetica Neue", "Roboto", sans-serif;
+}
+
+.info {
+    color: rgb(91, 93, 96);
+    font-family: "Helvetica Neue", "Roboto", sans-serif;
+    font-weight: bold;
 }
 
 ion-icon.icon.icon-md.ion-md-clock.item-icon {
