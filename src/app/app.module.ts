@@ -10,6 +10,7 @@ import { RegisterPage }    from '../pages/login-page/register-page';
 import { LoginService }    from '../pages/login-page/login-page-service';
 import { EventPage }       from '../pages/event/event';
 import { SettingPage }     from '../pages/setting/setting';
+import { FaqPage }     from '../pages/faq/faq';
 import { StatusBar }       from '@ionic-native/status-bar';
 import { SplashScreen }    from '@ionic-native/splash-screen';
 import { EventService }    from '../app/services/event.service';
@@ -27,6 +28,7 @@ import { DashboardPage }   from '../pages/dashboard/dashboard';
     ClubsPage,
     ClubPage,
     RegisterPage,
+    FaqPage,
     DashboardPage
   ],
   imports: [
@@ -43,6 +45,7 @@ import { DashboardPage }   from '../pages/dashboard/dashboard';
     ClubsPage,
     ClubPage,
     RegisterPage,
+    FaqPage,
     DashboardPage
   ],
   providers: [

@@ -7,15 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>setting</ion-title>
+    <ion-title>Settings</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-	<button ion-button round  outline color="danger" type="submit" (click)="logout()">
+
+<ion-title>Notifications</ion-title>
+  <ion-item>
+  <ion-toggle checked="true"></ion-toggle>
+</ion-item>
+
+  <br> <br>
+
+  <button ion-button round outline color = "default" (click)="goToFAQ()">Frequently Asked Questions</button>
+
+  <br> <br>
+
+	<button ion-button round  outline color="danger" type="submit" (click)="logout()">Logout
       <span class="glyphicon glyphicon-log-out"></span>
     </button>
+
+  <br>
 
 </ion-content>

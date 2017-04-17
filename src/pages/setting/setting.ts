@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { LoginService } 				 from '../login-page/login-page-service';
+import { FaqPage } from '../faq/faq';
 /*
   Generated class for the Setting page.
 
@@ -10,6 +11,7 @@ import { LoginService } 				 from '../login-page/login-page-service';
 @Component({
   selector: 'page-setting',
   templateUrl: 'setting.html'
+  //entryComponents:[ FaqPage ]
 })
 export class SettingPage {
 
@@ -22,6 +24,10 @@ export class SettingPage {
 
   logout(){
   	this.loginservice.logout();
+  }
+
+  goToFAQ() {
+    this.navCtrl.push(FaqPage);
   }
 
 }
