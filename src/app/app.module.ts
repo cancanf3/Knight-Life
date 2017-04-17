@@ -1,7 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp }           from './app.component';
-import { AboutPage }       from '../pages/about/about';
 import { HomePage }        from '../pages/home/home';
 import { TabsPage }        from '../pages/tabs/tabs';
 import { ClubsPage }       from '../pages/clubs/clubs';
@@ -15,11 +14,11 @@ import { StatusBar }       from '@ionic-native/status-bar';
 import { SplashScreen }    from '@ionic-native/splash-screen';
 import { EventService }    from '../app/services/event.service';
 import { OrgService }      from '../app/services/org.service';
+import { DashboardPage }   from '../pages/dashboard/dashboard';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
     HomePage,
     TabsPage,
     LoginPage,
@@ -27,7 +26,8 @@ import { OrgService }      from '../app/services/org.service';
     SettingPage,
     ClubsPage,
     ClubPage,
-    RegisterPage
+    RegisterPage,
+    DashboardPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -35,7 +35,6 @@ import { OrgService }      from '../app/services/org.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
     HomePage,
     TabsPage,
     LoginPage,
@@ -43,7 +42,8 @@ import { OrgService }      from '../app/services/org.service';
     SettingPage,
     ClubsPage,
     ClubPage,
-    RegisterPage
+    RegisterPage,
+    DashboardPage
   ],
   providers: [
     StatusBar,
