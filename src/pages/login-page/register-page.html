@@ -8,7 +8,7 @@
 
 <ion-content padding>
 
-<form *ngIf='!registering' (ngSubmit)='onRegister()' #loginForm='ngForm'>
+<form *ngIf='!registering' (ngSubmit)='onRegister()' #registerForm='ngForm'>
 		<div class="form-group" >
 		  <label for="name">username</label>
       <input type="text" class="form-control" id="name"
@@ -31,7 +31,7 @@
       Username already exists
     </div>
 
-    <button ion-button round (click)="onRegister()" outline color="primary" type="submit" [disabled]="!loginForm.form.valid">
+    <button ion-button round (click)="onRegister()" outline color="primary" type="submit" [disabled]="!registerForm.form.valid">
       <span> Register </span>
     </button>
 	</form>
