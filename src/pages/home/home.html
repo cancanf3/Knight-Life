@@ -2,7 +2,7 @@
     <ion-navbar>
         <ion-title>Events</ion-title>
     </ion-navbar>
-    <ion-searchbar>
+    <ion-searchbar [(ngModel)]="searched" (ionInput)="search($event)" placeholder="Search event...">
     </ion-searchbar>
 </ion-header>
 
