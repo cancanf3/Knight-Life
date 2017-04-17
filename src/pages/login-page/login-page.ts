@@ -1,7 +1,8 @@
 import { Component }                   from '@angular/core';
-import { NavController, NavParams }    from 'ionic-angular';
+import { NavController, NavParams, App }    from 'ionic-angular';
 import { LoginService }                from './login-page-service';
 import { TabsPage }                    from '../tabs/tabs';
+import { RegisterPage }                from './register-page';
 /*
   Generated class for the LoginPage page.
 
@@ -17,9 +18,10 @@ export class LoginPage {
 	username = '';
 	password = '';
   check: boolean;
+  pushPage = RegisterPage;
 
   constructor(public navCtrl: NavController, 
-              public navParams: NavParams, 
+              public app: App, 
               private loginservice: LoginService) {}
 
   ionViewDidLoad() {
@@ -30,7 +32,6 @@ export class LoginPage {
   onSubmit() {
     this.check = false;
   	this.loginservice.login(this.username, this.password).subscribe( msg => {
-      console.log(msg);
       if ("false" == localStorage.getItem("CurrentUser"))
         this.check = true;
       else
@@ -38,7 +39,7 @@ export class LoginPage {
        
     });
   }
-
+  
   reset() {
     this.check = false;
   }
