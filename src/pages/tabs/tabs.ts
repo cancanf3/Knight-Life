@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { HomePage } 	from '../home/home';
 import { AboutPage } 	from '../about/about';
-import { ContactPage } 	from '../contact/contact';
 import { LoginPage } 	from '../login-page/login-page';
 import { SettingPage }  from '../setting/setting';
 import { ClubsPage }    from '../clubs/clubs';
@@ -15,9 +14,8 @@ export class TabsPage {
   // should be each tab's root Page
   tab1Root: any = HomePage;
   tab2Root: any = AboutPage;
-  tab3Root: any = ContactPage;
+  tab3Root: any = ClubsPage;
   tab4Root: any = SettingPage;
-  tab5Root: any = ClubsPage;
 
   constructor() {
 
