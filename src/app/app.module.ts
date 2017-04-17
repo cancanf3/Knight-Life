@@ -30,7 +30,8 @@ import { CalendarPage }    from '../pages/calendar/calendar';
     ClubPage,
     RegisterPage,
     FaqPage,
-    DashboardPage
+    DashboardPage,
+    CalendarPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -47,7 +48,8 @@ import { CalendarPage }    from '../pages/calendar/calendar';
     ClubPage,
     RegisterPage,
     FaqPage,
-    DashboardPage
+    DashboardPage,
+    CalendarPage
   ],
   providers: [
     StatusBar,
