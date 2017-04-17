@@ -9,7 +9,7 @@
         <ion-item *ngFor="let event of events" (click)="itemSelected(event)">
             <h2 class="titles" style="color:green">{{ event.title }}</h2>
             <p>{{ event.description }}</p>
-            <ion-icon name="clock">  {{ event.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
+            <ion-icon name="clock" style="margin-right: 8px">{{ event.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
         </ion-item>
     </ion-list>
 </ion-content>
