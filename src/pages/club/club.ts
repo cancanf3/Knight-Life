@@ -15,6 +15,9 @@ export class ClubPage {
     item: any;
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         this.item = navParams.get('item');
+        if(!this.item.image) {
+            this.item.image = "https://static.yocket.in/images/universities/logos/ucf_logo.jpg";
+        }
         console.log(this.item);
     }
 
