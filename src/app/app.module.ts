@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp }           from './app.component';
-import { HomePage }        from '../pages/home/home';
+import { EventsPage }        from '../pages/events/events-page';
 import { TabsPage }        from '../pages/tabs/tabs';
 import { ClubsPage }       from '../pages/clubs/clubs';
 import { ClubPage }        from '../pages/club/club';
@@ -22,7 +22,7 @@ import { DashBoardService }        from '../pages/dashboard/dashboard.service';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    EventsPage,
     TabsPage,
     LoginPage,
     EventPage,
@@ -40,7 +40,7 @@ import { DashBoardService }        from '../pages/dashboard/dashboard.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    EventsPage,
     TabsPage,
     LoginPage,
     EventPage,
