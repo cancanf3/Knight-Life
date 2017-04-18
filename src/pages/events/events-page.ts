@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { EventPage } from '../event/event';
 import { EventService } from '../../app/services/event.service';
-import { Event } from './Event';
+import { Event } from './events-model';
+import { SubmitEvPage } from '../submit-ev/submit-ev'
+
 @Component({
-    selector: 'page-home',
-    templateUrl: 'home.html'
+    selector: 'page-events',
+    templateUrl: 'events-page.html'
 })
-export class HomePage {
+export class EventsPage {
 
     items: any[];
     events: Event[];
@@ -58,6 +60,10 @@ export class HomePage {
             }
         }
         //console.log(this.events[0]);
+    }
+
+    createEventForm() {
+        this.navCtrl.push(SubmitEvPage);
     }
 
     search(event) {
