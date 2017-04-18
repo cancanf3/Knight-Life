@@ -2,13 +2,9 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { EventPage } from '../event/event';
 import { EventService } from '../../app/services/event.service';
-<<<<<<< HEAD:src/pages/home/home.ts
-import { Event } from './Event';
+import { Event } from './events-model';
 import { SubmitEvPage } from '../submit-ev/submit-ev'
 
-=======
-import { Event } from './events-model';
->>>>>>> 41078dc6cacb9d668d965c8ffab3aaccde73cb69:src/pages/events/events-page.ts
 @Component({
     selector: 'page-events',
     templateUrl: 'events-page.html'
