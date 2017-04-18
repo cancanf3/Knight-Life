@@ -13,12 +13,13 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding style="background-color:#797b7f">
 
+<img style="margin-left: auto; margin-right: auto; display: block" src='../../assets/img/knightro.png'>
 	<form *ngIf='!login' (ngSubmit)='onSubmit()' #loginForm='ngForm'>
 		<div class="form-group" >
-		  <label for="name" style="margin-top: 170px">Username</label>
-      <input type="text" class="form-control" id="name"
+		  <label for="name" style="margin-top: 5px">Username</label>
+      <input style="background-color:#b5b7bc" type="text" class="form-control" id="name"
               required
               [(ngModel)]="username" name="name"
               (change)='reset()'>
@@ -26,7 +27,7 @@
 
     <div class="form-group">
       <label for="password">Password</label>
-      <input type="password" class="form-control" id="password"
+      <input style="background-color:#b5b7bc" type="password" class="form-control" id="password"
               required
               [(ngModel)]="password" name="password"
               (change)='reset()'>
@@ -38,7 +39,7 @@
       Wrong Username/Password
     </div>
 
-    <button ion-button round outline color="primary" type="submit" [disabled]="!loginForm.form.valid">
+    <button ion-button round color="primary" type="submit" [disabled]="!loginForm.form.valid">
       <span class="glyphicon glyphicon-log-in"></span>
     </button>
 

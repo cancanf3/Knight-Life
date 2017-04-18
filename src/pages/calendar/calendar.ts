@@ -21,6 +21,7 @@ export class CalendarPage {
       this.eventsInitial = [];
       this.searched = '';
       this.days = [];
+
   }
 
   itemSelected(item) {

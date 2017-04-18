@@ -16,6 +16,9 @@ export class ClubsPage {
     searching: String;
 
     constructor(public navCtrl: NavController, private orgService:OrgService) {
+    }
+
+    ionViewWillEnter(){
         this.clubs = [];
         this.clubsInitial = [];
         this.searching = '';
@@ -36,6 +39,10 @@ export class ClubsPage {
             this.items = response;
             this.createOrgs();
         });
+    }
+
+    addItem(name) {
+        this.orgService.favorite(name).subscribe(response => {})
     }
 
     createOrgs() {

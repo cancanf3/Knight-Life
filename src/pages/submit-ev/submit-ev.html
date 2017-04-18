@@ -16,18 +16,18 @@ Ionic pages and navigation.
 <ion-content padding>
     <ion-title style="text-align:center">Event Information</ion-title>
     <ion-item>
-        <ion-input type="email" placeholder="Title"></ion-input>
+        <ion-input [(ngModel)]="title" type="text" placeholder="Title"></ion-input>
     </ion-item>
     <ion-item>
-        <ion-input type="email" placeholder="Description"></ion-input>
+        <ion-input [(ngModel)]="description" type="email" placeholder="Description"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="secondary">Location</ion-label>
-        <ion-input placeholder="Student Union"></ion-input>
+        <ion-input [(ngModel)]="location" placeholder="Student Union"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label color="secondary" style="text-align: left;">Date</ion-label>
-        <ion-datetime displayFormat="MMM DD, YYYY HH:mm" [(ngModel)]="myDate"></ion-datetime>
+        <ion-datetime [(ngModel)]="date" displayFormat="MMM DD, YYYY HH:mm"></ion-datetime>
     </ion-item>
     <br>
     <button ion-button block color="secondary" (click)='showAlert()'>Submit Request</button>
