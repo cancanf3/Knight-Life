@@ -16,13 +16,11 @@ export class ClubsPage {
     searching: String;
 
     constructor(public navCtrl: NavController, private orgService:OrgService) {
-    }
-
-    ionViewWillEnter(){
         this.clubs = [];
         this.clubsInitial = [];
         this.searching = '';
     }
+
 
     itemSelected(item) {
         this.navCtrl.push(ClubPage, {
