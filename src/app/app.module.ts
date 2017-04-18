@@ -17,6 +17,7 @@ import { EventService }    from '../app/services/event.service';
 import { OrgService }      from '../app/services/org.service';
 import { DashboardPage }   from '../pages/dashboard/dashboard';
 import { CalendarPage }    from '../pages/calendar/calendar';
+import { SubmitEvPage }    from '../pages/submit-ev/submit-ev';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { CalendarPage }    from '../pages/calendar/calendar';
     RegisterPage,
     FaqPage,
     DashboardPage,
-    CalendarPage
+    CalendarPage,
+    SubmitEvPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -49,7 +51,8 @@ import { CalendarPage }    from '../pages/calendar/calendar';
     RegisterPage,
     FaqPage,
     DashboardPage,
-    CalendarPage
+    CalendarPage,
+    SubmitEvPage
   ],
   providers: [
     StatusBar,
