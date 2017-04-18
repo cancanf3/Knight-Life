@@ -11,7 +11,7 @@ import { Event } from './Event';
 export class CalendarPage {
 
   items: any[];
-  events: Event[];
+  events: Event[][];
   eventsInitial: Event[];
   searched: String;
 
@@ -46,6 +46,8 @@ export class CalendarPage {
       endDate.setDate(today.getDate() + daysToAdd);
 
       for(var i of this.items) {
+
+
           var event = new Event();
           event.title = i.title;
           event.owner = i.owner;
@@ -56,15 +58,16 @@ export class CalendarPage {
           event.eid = i.eid;
           event.location = i.location;
 
-          if(event.date >= today && event.date < endDate) {
+
+          /*if(event.date >= today && event.date < endDate) {
               this.events.push(event);
               this.eventsInitial.push(event);
-          }
+          }*/
       }
       //console.log(this.events[0]);
   }
 
-  search(event) {
+  /*search(event) {
       this.events = this.eventsInitial;
       var value = event.path[0].value;
 
@@ -86,5 +89,5 @@ export class CalendarPage {
           }
           return false;
       })
-  }
+  }*/
 }
