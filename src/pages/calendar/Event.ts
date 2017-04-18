@@ -5,6 +5,7 @@ export class Event {
     email: String;
     tags: any[];
     date: Date;
+    day: number;
     dateEnd: Date;
     eid: String;
     location: String;

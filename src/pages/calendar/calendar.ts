@@ -14,11 +14,13 @@ export class CalendarPage {
   eventss: Event[][];
   eventsInitial: Event[];
   searched: String;
+  days: Date[];
 
   constructor(public navCtrl: NavController, private eventService:EventService) {
       this.eventss = [[],[]];
       this.eventsInitial = [];
       this.searched = '';
+      this.days = [];
   }
 
   itemSelected(item) {
@@ -45,7 +47,13 @@ export class CalendarPage {
       var endDate = new Date();
       var j = 0;
       endDate.setDate(today.getDate() + daysToAdd);
+      var currentBlockDate = new Date();
+      //currentBlockDate.getDate();
 
+      this.eventss[j] = new Array();
+      j++;
+
+      debugger;
       for(var i of this.items) {
 
         var event = new Event();
@@ -54,17 +62,26 @@ export class CalendarPage {
         event.email = i.email;
         event.tags = i.tags;
         event.date = new Date(i.date);
+        event.day = new Date(i.date).getDay();
         event.dateEnd = new Date(i.dateEnd);
         event.eid = i.eid;
         event.location = i.location;
 
-        if(event.date >= today && event.date < endDate) {
+        this.days[i] = new Date(i.date);
+
+        if(event.date >= today && currentBlockDate.getDay() == event.day && event.date < endDate) {
+          this.eventss[j].push(event);
+          this.eventsInitial.push(event);
+        }
+
+        else if(event.date >= today && event.day < endDate.getDay()){
           this.eventss[j] = new Array();
           this.eventss[j].push(event);
           this.eventsInitial.push(event);
           j++;
+          currentBlockDate = event.date;
         }
-      }
+      }debugger;
       //console.log(this.events[0]);
   }
 
