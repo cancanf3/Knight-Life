@@ -16,7 +16,6 @@ export class ClubsPage {
     searching: String;
 
     constructor(public navCtrl: NavController, private orgService:OrgService) {
-        
         this.clubs = [];
         this.clubsInitial = [];
         this.searching = '';
