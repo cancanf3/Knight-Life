@@ -47,7 +47,7 @@ export class LoginPage implements OnInit {
         this.login = false;
       }
       else {
-        this.navCtrl.push(TabsPage);
+        this.app.getRootNav().setRoot(TabsPage);
       }
              
     });

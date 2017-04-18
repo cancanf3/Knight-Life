@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import { Http, Headers, RequestOptions }  from '@angular/http';
 import 'rxjs/Rx';
 
 @Injectable()
@@ -15,5 +15,21 @@ export class OrgService {
     getOrgs() {
         return this.http.get(this.url)
             .map(res => res.json());
+    }
+
+
+    favorite(name) {
+         
+        var options = new RequestOptions({
+              headers: new Headers({
+            'Content-Type': 'application/x-www-form-urlencoded'
+              })
+        });
+
+        return this.http.post(
+          this.url+"/favorite/"+localStorage.getItem("CurrentUser"),"organization="+name,
+          options).map(res => {
+              return res;
+          });
     }
 }

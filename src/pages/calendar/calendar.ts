@@ -16,9 +16,12 @@ export class CalendarPage {
   searched: String;
 
   constructor(public navCtrl: NavController, private eventService:EventService) {
-      this.eventss = [[],[]];
-      this.eventsInitial = [];
-      this.searched = '';
+  }
+
+  ionViewWillEnter(){
+    this.eventss = [[],[]];
+    this.eventsInitial = [];
+    this.searched = '';
   }
 
   itemSelected(item) {

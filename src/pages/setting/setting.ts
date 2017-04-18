@@ -22,6 +22,8 @@ export class SettingPage {
                   this.notf = 'Disable';
               }
 
+              
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
   }

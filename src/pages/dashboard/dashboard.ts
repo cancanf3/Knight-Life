@@ -22,14 +22,11 @@ export class DashboardPage {
     clubsInitial: Club[];
     searching: String;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private orgService:DashBoardService) {
-  	    this.clubs = [];
-        this.clubsInitial = [];
-        this.searching = '';
+  constructor(public navCtrl: NavController, public navParams: NavParams, private dashboardservice:DashBoardService) {
   }
 
 	ionViewDidLoad() {
-	console.log('ionViewDidLoad DashboardPage');
+	    console.log('ionViewDidLoad DashboardPage');
 	}
 
 
@@ -39,12 +36,15 @@ export class DashboardPage {
         });
     }
 
-    ngOnInit() {
+    ionViewWillEnter() {
+        this.clubs = [];
+        this.clubsInitial = [];
+        this.searching = '';
         this.getOrgs();
     }
 
     getOrgs() {
-        this.orgService.getOrgs().subscribe(response => {
+        this.dashboardservice.getOrgs().subscribe(response => {
             this.items = response;
             this.createOrgs();
         });
@@ -61,6 +61,22 @@ export class DashboardPage {
             this.clubs.push(club);
             this.clubsInitial.push(club);
         }
+    }
+
+    removeItem(name) {
+        this.dashboardservice.defavorite(name).subscribe( response => {
+
+            for ( var i = 0 ; i < this.clubs.length ; i++ ) {
+                if (this.clubs[i].name == name )
+                    this.clubs.splice(i,1);
+            } 
+
+
+            // for ( let club of this.clubs )
+            //     if (club.name == name )
+            //         this.clubs.pop(club);
+
+        })
     }
 
     search(club) {

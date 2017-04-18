@@ -8,14 +8,20 @@
 
 <ion-content>
     <ion-list>
-        <ion-item *ngFor="let club of clubs" (click)="itemSelected(club)">
-            <ion-thumbnail *ngIf="club.image" item-left>
-                <img class="logo" src="{{ club.image }}">
-            </ion-thumbnail>
-            <ion-thumbnail *ngIf="!club.image" item-left>
-                <img class="logo" src="https://static.yocket.in/images/universities/logos/ucf_logo.jpg">
-            </ion-thumbnail>
-            <h2 class="names">{{ club.name }}</h2>
-        </ion-item>
+        <ion-item-sliding *ngFor="let club of clubs">
+            <ion-item (click)="itemSelected(club)">
+                <ion-thumbnail *ngIf="club.image" item-left>
+                    <img class="logo" src="{{ club.image }}">
+                </ion-thumbnail>
+                <ion-thumbnail *ngIf="!club.image" item-left>
+                    <img class="logo" src="https://static.yocket.in/images/universities/logos/ucf_logo.jpg">
+                </ion-thumbnail>
+                <h2 class="names">{{ club.name }}</h2>
+            </ion-item>
+
+            <ion-item-options>
+              <button danger (click)="addItem(club.name)">Add</button>
+            </ion-item-options>
+        </ion-item-sliding>
     </ion-list>
 </ion-content>
