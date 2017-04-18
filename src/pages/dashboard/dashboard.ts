@@ -64,7 +64,8 @@ export class DashboardPage {
         }
     }
 
-    removeItem(name) {
+    removeItem(name, slidingitem) {
+        slidingitem.close();
         this.dashboardservice.defavorite(name).subscribe( response => {
 
             for ( var i = 0 ; i < this.clubs.length ; i++ ) {

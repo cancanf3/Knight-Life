@@ -8,7 +8,7 @@
 
 <ion-content>
     <ion-list>
-        <ion-item-sliding *ngFor="let club of clubs">
+        <ion-item-sliding *ngFor="let club of clubs" #slidingitem>
             <ion-item (click)="itemSelected(club)">
                 <ion-thumbnail *ngIf="club.image" item-left>
                     <img class="logo" src="{{ club.image }}">
@@ -21,7 +21,7 @@
             </ion-item>
 
             <ion-item-options side="right">
-                  <button danger (click)="removeItem(club.name)">Delete</button>
+                  <button danger (click)="removeItem(club.name, slidingitem)">Delete</button>
             </ion-item-options>
         </ion-item-sliding>
     </ion-list>
