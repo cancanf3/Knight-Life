@@ -41,6 +41,10 @@ export class CalendarPage {
 
   createEvents() {
       var today = new Date();
+      var daysToAdd = 30;
+      var endDate = new Date();
+      endDate.setDate(today.getDate() + daysToAdd);
+
       for(var i of this.items) {
           var event = new Event();
           event.title = i.title;
@@ -52,7 +56,7 @@ export class CalendarPage {
           event.eid = i.eid;
           event.location = i.location;
 
-          if(event.date > today) {
+          if(event.date >= today && event.date < endDate) {
               this.events.push(event);
               this.eventsInitial.push(event);
           }
