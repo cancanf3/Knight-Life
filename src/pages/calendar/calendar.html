@@ -7,8 +7,8 @@
 </ion-header>
 
 <ion-content>
-    <ion-list>
-        <ion-item no-lines *ngFor="let events of eventss">
+    <ion-list no-lines>
+        <ion-item *ngFor="let events of eventss">
           <hr>
           <ion-item *ngFor="let event of events" (click)="itemSelected(event)">
             <h2 class="titles" style="color:green">{{ event.title }}</h2>
