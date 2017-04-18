@@ -6,20 +6,20 @@
 
 </ion-header>
 
-<ion-content padding>
+<ion-content padding style="background-color:#797b7f">
 
 <form *ngIf='!registering' (ngSubmit)='onRegister()' #registerForm='ngForm'>
 		<div class="form-group" >
-		  <label for="name">Username</label>
-      <input type="text" class="form-control" id="name"
+		  <label for="name">Enter Username:</label>
+      <input style="background-color:#b5b7bc" type="text" class="form-control" id="name"
               required
               [(ngModel)]="username" name="name"
               (change)='reset()'>
 		</div>
 
     <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password"
+      <label for="password">Enter Password:</label>
+      <input style="background-color:#b5b7bc" type="password" class="form-control" id="password"
               required
               [(ngModel)]="password" name="password"
               (change)='reset()'>
@@ -31,8 +31,8 @@
       Username already exists
     </div>
 
-    <button ion-button round (click)="onRegister()" outline color="primary" type="submit" [disabled]="!registerForm.form.valid">
-      <span> Register </span>
+    <button ion-button round (click)="onRegister()" color="primary" type="submit" [disabled]="!registerForm.form.valid">
+      <span> Finish Registration </span>
     </button>
 	</form>
 
