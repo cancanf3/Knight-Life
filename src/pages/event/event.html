@@ -14,12 +14,14 @@
 
 
 <ion-content padding>
-    <h1>{{item.title}}</h1>
-    <p>{{item.description}}</p>
-    <ion-icon name="person">  {{ item.owner }}</ion-icon>
+    <h1 style="text-align: center;">{{item.title}}</h1>
+    <hr>
+    <p class="description">{{item.description}}</p>
+    <hr>
+    <ion-icon class="info" name="person">  {{ item.owner }}</ion-icon>
     <br>
-    <ion-icon name="clock">  {{ item.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
+    <ion-icon class="info" name="clock">  {{ item.date | date : "EEE, M/d @ h:mm a" }}</ion-icon>
     <br>
-    <ion-icon name="navigate">  {{ item.location }}</ion-icon>
+    <ion-icon class="info" name="navigate">  {{ item.location }}</ion-icon>
 
 </ion-content>

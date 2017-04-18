@@ -10,11 +10,13 @@ import { RegisterPage }    from '../pages/login-page/register-page';
 import { LoginService }    from '../pages/login-page/login-page-service';
 import { EventPage }       from '../pages/event/event';
 import { SettingPage }     from '../pages/setting/setting';
+import { FaqPage }     from '../pages/faq/faq';
 import { StatusBar }       from '@ionic-native/status-bar';
 import { SplashScreen }    from '@ionic-native/splash-screen';
 import { EventService }    from '../app/services/event.service';
 import { OrgService }      from '../app/services/org.service';
 import { DashboardPage }   from '../pages/dashboard/dashboard';
+import { CalendarPage }    from '../pages/calendar/calendar';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { DashboardPage }   from '../pages/dashboard/dashboard';
     ClubsPage,
     ClubPage,
     RegisterPage,
-    DashboardPage
+    FaqPage,
+    DashboardPage,
+    CalendarPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -43,7 +47,9 @@ import { DashboardPage }   from '../pages/dashboard/dashboard';
     ClubsPage,
     ClubPage,
     RegisterPage,
-    DashboardPage
+    FaqPage,
+    DashboardPage,
+    CalendarPage
   ],
   providers: [
     StatusBar,

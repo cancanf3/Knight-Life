@@ -11,9 +11,13 @@ export class HomePage {
 
     items: any[];
     events: Event[];
+    eventsInitial: Event[];
+    searched: String;
 
     constructor(public navCtrl: NavController, private eventService:EventService) {
         this.events = [];
+        this.eventsInitial = [];
+        this.searched = '';
     }
 
     itemSelected(item) {
@@ -50,8 +54,33 @@ export class HomePage {
 
             if(event.date > today) {
                 this.events.push(event);
+                this.eventsInitial.push(event);
             }
         }
         //console.log(this.events[0]);
+    }
+
+    search(event) {
+        this.events = this.eventsInitial;
+        var value = event.path[0].value;
+
+        if(value == undefined) {
+            return;
+        }
+
+        // if the value is an empty string don't filter the items
+        if (value.trim() == '') {
+            return;
+        }
+
+        this.events = this.events.filter((v) => {
+            if(v.title.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+                return true;
+            }
+            if(v.description.toLowerCase().indexOf(value.toLowerCase()) > -1) {
+                return true;
+            }
+            return false;
+        })
     }
 }
