@@ -8,8 +8,9 @@
 
 <ion-content>
     <ion-list>
-        <ion-item no-lines *ngFor="let events of eventss" (click)="itemSelected(event)">
-          <ion-item *ngFor="let event of events">
+        <ion-item no-lines *ngFor="let events of eventss">
+          <hr>
+          <ion-item *ngFor="let event of events" (click)="itemSelected(event)">
             <h2 class="titles" style="color:green">{{ event.title }}</h2>
             <p>{{ event.description }}</p>
             <ion-icon class="time" name="clock">  {{ event.date | date : "M/d h:mm a" }}</ion-icon>
