@@ -15,8 +15,12 @@ import { FaqPage } from '../faq/faq';
 })
 export class SettingPage {
 
+    notf: String;
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  			  private loginservice: LoginService ) {}
+  			  private loginservice: LoginService ) {
+                  this.notf = 'Disable';
+              }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingPage');
@@ -28,6 +32,15 @@ export class SettingPage {
 
   goToFAQ() {
     this.navCtrl.push(FaqPage);
+  }
+
+  toggleTitle() {
+      if(this.notf == 'Enable') {
+          this.notf = 'Disable';
+      }
+      else {
+          this.notf = 'Enable';
+      }
   }
 
 }
