@@ -11,12 +11,12 @@ import { Event } from './Event';
 export class CalendarPage {
 
   items: any[];
-  events: Event[][];
+  eventss: Event[][];
   eventsInitial: Event[];
   searched: String;
 
   constructor(public navCtrl: NavController, private eventService:EventService) {
-      this.events = [];
+      this.eventss = [[],[]];
       this.eventsInitial = [];
       this.searched = '';
   }
@@ -43,26 +43,27 @@ export class CalendarPage {
       var today = new Date();
       var daysToAdd = 30;
       var endDate = new Date();
+      var j = 0;
       endDate.setDate(today.getDate() + daysToAdd);
 
       for(var i of this.items) {
 
+        var event = new Event();
+        event.title = i.title;
+        event.owner = i.owner;
+        event.email = i.email;
+        event.tags = i.tags;
+        event.date = new Date(i.date);
+        event.dateEnd = new Date(i.dateEnd);
+        event.eid = i.eid;
+        event.location = i.location;
 
-          var event = new Event();
-          event.title = i.title;
-          event.owner = i.owner;
-          event.email = i.email;
-          event.tags = i.tags;
-          event.date = new Date(i.date);
-          event.dateEnd = new Date(i.dateEnd);
-          event.eid = i.eid;
-          event.location = i.location;
-
-
-          /*if(event.date >= today && event.date < endDate) {
-              this.events.push(event);
-              this.eventsInitial.push(event);
-          }*/
+        if(event.date >= today && event.date < endDate) {
+          this.eventss[j] = new Array();
+          this.eventss[j].push(event);
+          this.eventsInitial.push(event);
+          j++;
+        }
       }
       //console.log(this.events[0]);
   }
