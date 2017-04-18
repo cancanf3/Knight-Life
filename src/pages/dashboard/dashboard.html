@@ -1,18 +1,21 @@
-<!--
-  Generated template for the Dashboard page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-title>Dash Board</ion-title>
+    </ion-navbar>
+    <ion-searchbar [(ngModel)]="searching" (ionInput)="search($club)" placeholder="Search organization...">
+    </ion-searchbar>
 </ion-header>
 
-
-<ion-content padding>
-  <p>Personalized information goes here....</p>
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let club of clubs" (click)="itemSelected(club)">
+            <ion-thumbnail *ngIf="club.image" item-left>
+                <img class="logo" src="{{ club.image }}">
+            </ion-thumbnail>
+            <ion-thumbnail *ngIf="!club.image" item-left>
+                <img class="logo" src="https://static.yocket.in/images/universities/logos/ucf_logo.jpg">
+            </ion-thumbnail>
+            <h2 class="names">{{ club.name }}</h2>
+        </ion-item>
+    </ion-list>
 </ion-content>
