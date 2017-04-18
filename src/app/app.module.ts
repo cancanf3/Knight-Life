@@ -16,7 +16,8 @@ import { SplashScreen }    from '@ionic-native/splash-screen';
 import { EventService }    from '../app/services/event.service';
 import { OrgService }      from '../app/services/org.service';
 import { DashboardPage }   from '../pages/dashboard/dashboard';
-import { CalendarPage }    from '../pages/calendar/calendar';
+import { CalendarPage }            from '../pages/calendar/calendar';
+import { DashBoardService }        from '../pages/dashboard/dashboard.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { CalendarPage }    from '../pages/calendar/calendar';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginService,
     EventService,
-    OrgService
+    OrgService,
+    DashBoardService
 
   ]
 })
