@@ -1,6 +1,11 @@
 <ion-header>
     <ion-navbar>
         <ion-title>Events</ion-title>
+        <ion-buttons (click)="createEventForm()" end>
+            <button ion-button icon-only color="royal">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
     </ion-navbar>
     <ion-searchbar [(ngModel)]="searched" (ionInput)="search($event)" placeholder="Search event...">
     </ion-searchbar>

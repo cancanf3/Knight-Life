@@ -1,7 +1,7 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp }           from './app.component';
-import { HomePage }        from '../pages/home/home';
+import { EventsPage }        from '../pages/events/events-page';
 import { TabsPage }        from '../pages/tabs/tabs';
 import { ClubsPage }       from '../pages/clubs/clubs';
 import { ClubPage }        from '../pages/club/club';
@@ -16,13 +16,16 @@ import { SplashScreen }    from '@ionic-native/splash-screen';
 import { EventService }    from '../app/services/event.service';
 import { OrgService }      from '../app/services/org.service';
 import { DashboardPage }   from '../pages/dashboard/dashboard';
-import { CalendarPage }            from '../pages/calendar/calendar';
+
+import { CalendarPage }    from '../pages/calendar/calendar';
 import { DashBoardService }        from '../pages/dashboard/dashboard.service';
+import { SubmitEvPage }    from '../pages/submit-ev/submit-ev';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
+    EventsPage,
     TabsPage,
     LoginPage,
     EventPage,
@@ -32,7 +35,8 @@ import { DashBoardService }        from '../pages/dashboard/dashboard.service';
     RegisterPage,
     FaqPage,
     DashboardPage,
-    CalendarPage
+    CalendarPage,
+    SubmitEvPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -40,7 +44,7 @@ import { DashBoardService }        from '../pages/dashboard/dashboard.service';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    EventsPage,
     TabsPage,
     LoginPage,
     EventPage,
@@ -50,7 +54,8 @@ import { DashBoardService }        from '../pages/dashboard/dashboard.service';
     RegisterPage,
     FaqPage,
     DashboardPage,
-    CalendarPage
+    CalendarPage,
+    SubmitEvPage
   ],
   providers: [
     StatusBar,

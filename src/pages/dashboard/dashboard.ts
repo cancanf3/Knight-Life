@@ -46,7 +46,6 @@ export class DashboardPage {
     getOrgs() {
         this.orgService.getOrgs().subscribe(response => {
             this.items = response;
-            console.log(response[0]);
             this.createOrgs();
         });
     }
