@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>RegisterPage</ion-title>
+    <ion-title>Registration</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -10,7 +10,7 @@
 
 <form *ngIf='!registering' (ngSubmit)='onRegister()' #registerForm='ngForm'>
 		<div class="form-group" >
-		  <label for="name">username</label>
+		  <label for="name">Username</label>
       <input type="text" class="form-control" id="name"
               required
               [(ngModel)]="username" name="name"

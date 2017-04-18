@@ -1,5 +1,5 @@
 import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { IonicApp, IonicModule, IonicErrorHandler, AlertController } from 'ionic-angular';
 import { MyApp }           from './app.component';
 import { EventsPage }        from '../pages/events/events-page';
 import { TabsPage }        from '../pages/tabs/tabs';
