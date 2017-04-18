@@ -142,7 +142,9 @@ public class KnightLife {
             JSONObject ev = (JSONObject) o;
             if (token.compareTo((String) ev.get("token")) == 0 ) {
                 JSONArray rsosUser = (JSONArray) ev.get("organizations");
-                rsosUser.add(organization);
+                if (!rsosUser.contains(organization)) {
+                    rsosUser.add(organization);
+                }
                 ev.put("organizations", rsosUser);
                 status = 200;
                 respond = "RSO added";

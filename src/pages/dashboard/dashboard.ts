@@ -37,6 +37,7 @@ export class DashboardPage {
     }
 
     ionViewWillEnter() {
+        console.log('cargando');
         this.clubs = [];
         this.clubsInitial = [];
         this.searching = '';

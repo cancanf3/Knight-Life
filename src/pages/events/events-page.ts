@@ -17,9 +17,6 @@ export class EventsPage {
     searched: String;
 
     constructor(public navCtrl: NavController, private eventService:EventService) {
-    }
-
-    ionViewWillEnter(){
         this.events = [];
         this.eventsInitial = [];
         this.searched = '';
