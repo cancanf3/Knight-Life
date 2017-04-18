@@ -13,9 +13,6 @@ GET
 /knightlife/rest/organizations/{token}
 Returns all the RSO from that user
 
-POST
-/knightlife/rest/organizations/favorite/{token}
-Set a RSO as favorite for an user
 
 POST
 /knightlife/rest/organizations/defavorite/{token}

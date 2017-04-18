@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Events</ion-title>
+        <ion-buttons (click)="createEventForm()" end>
+            <button ion-button icon-only color="royal">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+    <ion-searchbar [(ngModel)]="searched" (ionInput)="search($event)" placeholder="Search event...">
+    </ion-searchbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let event of events" (click)="itemSelected(event)">
+            <h2 class="titles" style="color:green">{{ event.title }}</h2>
+            <p>{{ event.description }}</p>
+            <ion-icon class="time" name="clock"></ion-icon>
+            <p style="float:left; margin-left:2%; color:#3c9dc4" class="info">{{ event.date | date : "EEE, M/d @ h:mm a" }}</p>
+        </ion-item>
+    </ion-list>
+</ion-content>
