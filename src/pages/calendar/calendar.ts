@@ -14,14 +14,13 @@ export class CalendarPage {
   eventss: Event[][];
   eventsInitial: Event[];
   searched: String;
+  days: Date[];
 
   constructor(public navCtrl: NavController, private eventService:EventService) {
-  }
-
-  ionViewWillEnter(){
-    this.eventss = [[],[]];
-    this.eventsInitial = [];
-    this.searched = '';
+      this.eventss = [[],[]];
+      this.eventsInitial = [];
+      this.searched = '';
+      this.days = [];
   }
 
   itemSelected(item) {
@@ -48,6 +47,11 @@ export class CalendarPage {
       var endDate = new Date();
       var j = 0;
       endDate.setDate(today.getDate() + daysToAdd);
+      var currentBlockDate = new Date().getDay();
+      //currentBlockDate.getDate();
+
+      this.eventss[j] = new Array();
+      j++;
 
       for(var i of this.items) {
 
@@ -61,11 +65,19 @@ export class CalendarPage {
         event.eid = i.eid;
         event.location = i.location;
 
+        this.days[i] = new Date(i.date);
+
         if(event.date >= today && event.date < endDate) {
+          this.eventss[j].push(event);
+          this.eventsInitial.push(event);
+        }
+
+        else {
           this.eventss[j] = new Array();
           this.eventss[j].push(event);
           this.eventsInitial.push(event);
           j++;
+          currentBlockDate = event.date.getDay();
         }
       }
       //console.log(this.events[0]);
