@@ -39,8 +39,9 @@ export class ClubsPage {
         });
     }
 
-    addItem(name) {
+    addItem(name, slidingitem) {
         this.orgService.favorite(name).subscribe(response => {})
+        slidingitem.close()
     }
 
     createOrgs() {
